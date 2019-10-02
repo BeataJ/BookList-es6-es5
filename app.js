@@ -44,6 +44,11 @@ document.getElementById('book-form').addEventListener('submit', function(e) {
   // Instantiante UI
   const ui = new UI();
 
+  // Validate
+  if(title === '' || author === '' || isbn === '') {
+    alert('Failed');
+  }
+
   // Add book to list
   ui.addBookToList(book)
 

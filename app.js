@@ -11,6 +11,7 @@ function UI() {}
 
 // Event Listener
 document.getElementById('book-form').addEventListener('submit', function(e) {
+  // Get form values
   const title = document.getElementById('title').value,
         author = document.getElementById('author').value,
         isbn = document.getElementById('isbn').value;    

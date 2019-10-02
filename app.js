@@ -11,7 +11,11 @@ function UI() {}
 
 // Event Listener
 document.getElementById('book-form').addEventListener('submit', function(e) {
-  console.log('test');
+  const title = document.getElementById('title').value,
+        author = document.getElementById('author').value,
+        isbn = document.getElementById('isbn').value;    
+        
+  console.log(title, author, isbn);      
 
   e.preventDefault();
 });

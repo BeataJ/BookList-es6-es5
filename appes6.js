@@ -54,3 +54,50 @@ class UI {
     document.getElementById("isbn").value = "";
   }
 }
+
+// Event Listener for add book
+document.getElementById("book-form").addEventListener("submit", function(e) {
+  // Get form values
+  const title = document.getElementById("title").value,
+    author = document.getElementById("author").value,
+    isbn = document.getElementById("isbn").value;
+
+  // Instantiate book
+  const book = new Book(title, author, isbn);
+
+  // Instantiante UI
+  const ui = new UI();
+
+  // Validate
+  if (title === "" || author === "" || isbn === "") {
+    // Error alert
+    ui.showAlert('Please fill in all fields', 'error');
+  } else {
+    // Add book to list
+    ui.addBookToList(book);
+
+    // Show success alert
+    ui.showAlert('Book Added!', 'success');
+
+    // Clear fields
+    ui.clearFields();
+  }
+
+  e.preventDefault();
+});
+
+
+// Event Listener for delete
+document.getElementById('book-list').addEventListener('click', function(e) {
+
+  // Instantiante UI
+  const ui = new UI();
+
+  // delete book
+  ui.deleteBook(e.target);
+
+  // Show message
+  ui.showAlert('Book Remove', 'success');
+
+  e.preventDefault()
+});

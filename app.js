@@ -52,7 +52,7 @@ UI.prototype.clearFields = function() {
   document.getElementById("isbn").value = "";
 };
 
-// Event Listener
+// Event Listener for add book
 document.getElementById("book-form").addEventListener("submit", function(e) {
   // Get form values
   const title = document.getElementById("title").value,
@@ -73,7 +73,7 @@ document.getElementById("book-form").addEventListener("submit", function(e) {
     // Add book to list
     ui.addBookToList(book);
 
-    // Show success
+    // Show success alert
     ui.showAlert('Book Added!', 'success');
 
     // Clear fields
@@ -81,4 +81,12 @@ document.getElementById("book-form").addEventListener("submit", function(e) {
   }
 
   e.preventDefault();
+});
+
+
+// Event Listener for delete
+document.getElementById('book-list').addEventListener('click', function(e) {
+  console.log(123);
+
+  e.preventDefault()
 });

@@ -87,8 +87,8 @@ class Store {
     localStorage.setItem('books', JSON.stringify(books));
   }
 
-  static removeBook() {
-    
+  static removeBook(isbn) {
+    console.log(isbn);
   }
 }
 
@@ -138,6 +138,8 @@ document.getElementById('book-list').addEventListener('click', function(e) {
 
   // delete book
   ui.deleteBook(e.target);
+
+  Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 
   // Show message
   ui.showAlert('Book Remove', 'success');

@@ -88,7 +88,13 @@ class Store {
   }
 
   static removeBook(isbn) {
-    console.log(isbn);
+    const books = Store.getBooks();
+
+    books.forEach((book, index) => {
+      if(book.isbn === isbn) {
+        book.splice(index, 1);
+      }
+    });
   }
 }
 
